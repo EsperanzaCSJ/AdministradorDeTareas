@@ -26,4 +26,7 @@ export async function GET(){
   if (failed.length) {
     throw new Error();
   }
+  return new Response('Hola, se vencio una de tus tarea, revisa la pagina', {
+    status: 200,
+  })
 }
