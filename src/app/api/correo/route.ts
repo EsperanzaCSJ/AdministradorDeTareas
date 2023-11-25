@@ -20,6 +20,7 @@ export async function GET() {
       id: true,
       titulo: true,
       descripcion: true,
+      vencimiento: true,
     },
   });
 
@@ -36,11 +37,9 @@ export async function GET() {
     const result = await transport.sendMail({
       to: recordatorio.createdBy.email ?? undefined,
       from: "esperanzasj2012@gmail.com",
-      subject: `Recordatorio ${recordatorio.titulo}`,
+      subject: `Recordatorio: ${recordatorio.titulo}`,
       text: `Hola! Tu tarea ${recordatorio.titulo}
-      con la descripcion: ${recordatorio.descripcion}
-      expiro.
-      `,
+      con la descripcion: ${recordatorio.descripcion} expiro.`,
       headers: {
         "X-Entity-Ref-ID": new Date().getTime().toString(),
       },
