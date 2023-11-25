@@ -51,6 +51,19 @@ export async function GET() {
     }
   }
 
+  await Promise.all(
+    tareasPorRecordar.map((r) =>
+      db.tarea.update({
+        where: {
+          id: r.id,
+        },
+        data: {
+          recordado: true,
+        },
+      }),
+    ),
+  );
+
   return new Response("Hola, se vencio una de tus tarea, revisa la pagina", {
     status: 200,
   });
