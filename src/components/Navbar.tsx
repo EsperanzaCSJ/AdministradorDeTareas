@@ -18,10 +18,10 @@ export default async function Navbar() {
           <AvatarFallback>Avatar</AvatarFallback>
         </Avatar>
         ): (
-          <div></div>
+          <ButtonRegister />
         )}        
-        {session && session.user ? <ButtonLogout /> : <ButtonLogin />}
-        <ButtonRegister />
+        {session && session.user ? <ButtonLogout /> : <ButtonLogin /> }
+        
       </div>
     </nav>
   );

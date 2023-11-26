@@ -13,12 +13,7 @@ export default async function HomePage() {
 
   if (!session) {
     return (
-      <div>
-        <div>Por favor, inicia sesion</div>
-        <Link href="/login">
-          <Button>Inciar sesion</Button>
-        </Link>
-      </div>
+      <div>Por favor, inicia sesion</div>
     );
   }
 
