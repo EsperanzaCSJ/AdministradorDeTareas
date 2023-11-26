@@ -25,12 +25,11 @@ export default function Formulario() {
     <form onSubmit={form.handleSubmit(onSubmit)}>
       {/* register your input into the hook by invoking the "register" function */}
       <Input defaultValue="test" {...form.register("titulo")} />
+      {/* errors will return when field validation fails  */}
 
       {/* include validation with required or other standard HTML validation rules */}
       <Input {...form.register("descripcion", { required: true })} />
-
-      {/* errors will return when field validation fails  */}
-      {form.formState.errors.descripcion && <span>Este campo es obligatorio</span>}
+      {form.formState.errors.descripcion && <span>Debe escribir los detalles de su tarea</span>}
 
       <Input type="datetime-local" {...form.register("vencimiento")} />
       <Button type="submit">Guardar</Button>
