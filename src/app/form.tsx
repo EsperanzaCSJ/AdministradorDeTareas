@@ -36,4 +36,6 @@ export default function Formulario() {
       <Button type="submit">Guardar</Button>
     </form>
   );
+
+  
 }

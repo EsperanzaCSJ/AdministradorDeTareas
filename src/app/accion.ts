@@ -2,6 +2,8 @@
 
 import { getServerAuthSession } from "@/server/auth";
 import { db } from "@/server/db";
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export async function crear(tarea: {
   titulo: string;
@@ -18,4 +20,6 @@ export async function crear(tarea: {
       createdById: session.user.id
     },
   });
+  revalidatePath("/")
+  redirect('/')
 }
