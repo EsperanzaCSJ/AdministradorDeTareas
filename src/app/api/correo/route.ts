@@ -1,4 +1,5 @@
 import { env } from "@/env.mjs";
+import { correctTimezone } from "@/lib/utils";
 import { db } from "@/server/db";
 import { createTransport } from "nodemailer";
 
@@ -8,7 +9,7 @@ export async function GET() {
     where: {
       recordado: false,
       vencimiento: {
-        lte: new Date(),
+        lte: correctTimezone(new Date()),
       },
     },
     select: {
@@ -38,8 +39,8 @@ export async function GET() {
       to: recordatorio.createdBy.email ?? undefined,
       from: "esperanzasj2012@gmail.com",
       subject: `Recordatorio: ${recordatorio.titulo}`,
-      text: `Hola! Tu tarea ${recordatorio.titulo}
-      con la descripcion: ${recordatorio.descripcion} expiro.`,
+      text: `Hola! Tu tarea ${recordatorio.titulo}, con la descripcion: ${recordatorio.descripcion} expiro.
+      Completala o crea otra tarea con recordatorio`,
       headers: {
         "X-Entity-Ref-ID": new Date().getTime().toString(),
       },
@@ -64,7 +65,7 @@ export async function GET() {
     ),
   );
 
-  return new Response("Hola, se vencio una de tus tarea, revisa la pagina", {
+  return new Response("Hola, tienes tareas vencidas", {
     status: 200,
   });
 }

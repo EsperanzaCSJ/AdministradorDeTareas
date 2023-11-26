@@ -18,7 +18,7 @@ model Tarea {
     id          Int      @id @default(sequence())
     titulo      String
     descripcion String
-    vencimiento DateTime @db.Date
+    vencimiento DateTime 
     recordado   Boolean  @default(false)
     createdAt   DateTime @default(now())
     updatedAt   DateTime @updatedAt
