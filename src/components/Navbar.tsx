@@ -1,6 +1,6 @@
 import { getServerAuthSession } from "@/server/auth";
 import Link from "next/link";
-import { ButtonLogin, ButtonLogout } from "./authButton";
+import { ButtonLogin, ButtonLogout, ButtonRegister } from "./authButton";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 export default async function Navbar() {
@@ -12,11 +12,16 @@ export default async function Navbar() {
       </Link>
       <div className="flex items-center gap-x-2">
         <p>{session?.user.name}</p>
+        {session?.user ? (
         <Avatar>
           <AvatarImage src={session?.user.image ?? ""} />
           <AvatarFallback>Avatar</AvatarFallback>
         </Avatar>
+        ): (
+          <div></div>
+        )}        
         {session && session.user ? <ButtonLogout /> : <ButtonLogin />}
+        <ButtonRegister />
       </div>
     </nav>
   );

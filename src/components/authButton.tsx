@@ -5,8 +5,16 @@ import { Button } from "./ui/button";
 
 export function ButtonLogin() {
   return (
-    <Button className="rounded bg-slate-400 px-3 py-2" onClick={() => signIn()}>
+    <Button className="rounded bg-green-700 px-3 py-2" onClick={() => signIn("google")}>
       Ingresar
+    </Button>
+  );
+}
+
+export function ButtonRegister() {
+  return (
+    <Button className="rounded bg-slate-400 px-3 py-2" onClick={() => signIn("google")}>
+      Registrarme
     </Button>
   );
 }
