@@ -32,7 +32,8 @@ export default function Formulario() {
       {form.formState.errors.descripcion && <span>Debe escribir los detalles de su tarea</span>}
 
       <Input type="datetime-local" {...form.register("vencimiento")} />
-      <Button type="submit">Guardar</Button>
+      <Button type="submit">Guardar</Button> 
+
     </form>
   );
 
