@@ -28,8 +28,11 @@ export default async function MostrarTasks() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
+          Aqui puedes ver tus tareas!
+        </h1>
       <Button asChild>
-        <Link href="/tasks">Agregar</Link>
+        <Link href="/tasks">Agregar Nueva</Link>
       </Button>
 
       {tareas.map((tarea) => {
