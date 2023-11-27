@@ -31,18 +31,18 @@ export default async function MostrarTasks() {
         <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
           Aqui puedes ver tus tareas!
         </h1>
-      <Button asChild>
+      <Button asChild className="p-4 mb-4">
         <Link href="/tasks">Agregar Nueva</Link>
       </Button>
 
       {tareas.map((tarea) => {
         return (
-          <form key={tarea.id}>
-            <div>{tarea.titulo}</div>
+          <form key={tarea.id} className="p-4 mb-4 text-sm rounded-lg bg-blue-50 dark:bg-gray-800 dark:text-blue-400">
+            <div  className="text-blue-800 text-2xl" >{tarea.titulo}</div>
             <div>{tarea.descripcion}</div>
             <div>{tarea.vencimiento.toString()}</div>
             <Button>Editar</Button>
-            <Button
+            <Button 
               variant="destructive"
               formAction={async function () {
                 "use server";

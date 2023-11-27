@@ -20,9 +20,8 @@ export default async function HomePage() {
           Agrega una nueva tarea
         </h1>
       <Formulario />
-      <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-6xl">.</h1>
-      
-      <Button asChild>
+      <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-white md:text-5xl lg:text-4xl">.</h1>
+      <Button asChild >
         <Link href="./">Consultar mis tareas</Link>
       </Button>
     </main>
