@@ -8,7 +8,16 @@ import { redirect } from "next/navigation";
 export default async function MostrarTasks() {
   const session = await getServerAuthSession();
   if (!session) {
-    return <div>Por favor, inicia sesion</div>;
+    return (
+      <div className="mx-auto max-w-screen-xl px-4 py-24 text-center lg:py-56">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-black md:text-5xl lg:text-6xl">
+          Administra eficientemente tus tareas!
+        </h1>
+        <p className="mb-8 text-lg font-normal text-black sm:px-16 lg:px-48 lg:text-xl">
+          Inicia sesion o registrate para crear tareas pendientes y establecer recordatorios
+        </p>
+      </div>
+    );
   }
 
   const tareas = await db.tarea.findMany({
