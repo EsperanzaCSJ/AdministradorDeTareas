@@ -8,7 +8,7 @@ export default async function Navbar() {
   return (
     <nav className="flex items-center justify-between bg-slate-900 px-40 py-3 text-white">
       <a href="./" className="flex items-center space-x-3 rtl:space-x-reverse">
-        <img src="https://solucionescontables.net.ve/wp-content/uploads/2023/09/azul_rojo.png" className="h-10" alt="" /></a>
+        <img src="https://solucionescontables.net.ve/wp-content/uploads/2023/09/azul_rojo.png" className="h-11" alt="" /></a>
       <div className="flex items-center gap-x-2">
         <p>{session?.user.name}</p>
         {session?.user ? (

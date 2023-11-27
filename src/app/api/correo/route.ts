@@ -24,6 +24,12 @@ export async function GET() {
       vencimiento: true,
     },
   });
+console.log("??????????");
+console.log(tareasPorRecordar);
+console.log("??????????");
+console.log(correctTimezone(new Date()));
+
+
 
   const transport = createTransport({
     auth: {
